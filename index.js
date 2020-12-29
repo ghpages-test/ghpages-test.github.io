@@ -20,7 +20,7 @@ if (location.hash.substr() != "") {
   var params = unserialize(location.hash.substr(1));
   console.log(params);
   const btn = document.getElementById("query-btn");
-  const apiUrl = "http://twinoid.com/graph/me";
+  const apiUrl = "https://twinoid.com/graph/me";
   btn.addEventListener(
     "click",
     callApi(apiUrl, params.access_token, (obj) => {
