@@ -1,3 +1,5 @@
+//Funciones de conveniencia
+
 function unserialize(qstr) {
   var r = /([^&=]+)=([^&]*)/g,
     p = {},
@@ -16,15 +18,21 @@ function callApi(url, token, callback) {
   });
 }
 
-if (location.hash.substr() != "") {
-  var params = unserialize(location.hash.substr(1));
-  console.log(params);
-  const btn = document.getElementById("query-btn");
-  const apiUrl = "https://twinoid.com/graph/me";
-  btn.addEventListener(
-    "click",
-    callApi(apiUrl, params.access_token, (obj) => {
-      console.log(obj);
-    })
-  );
+//Codigo principal
+
+const btn = document.getElementById("query-btn");
+const scopeInput = document.getElementById("scope");
+const urlInput = document.getElementById("url");
+btn.addEventListener("click", () => {
+  btn.href += scopeInput.value + "&state=" + urlInput.value;
+});
+
+//Llamado a la API
+
+if (location.hash.substr(0, 25) === "#state=null&access_token=") {
+  let params = unserialize(location.hash.substr(1));
+  const apiUrl = "https://twinoid.com/graph/" + params.state;
+  callApi(apiUrl, params.access_token, (obj) => {
+    console.log(obj);
+  });
 }
