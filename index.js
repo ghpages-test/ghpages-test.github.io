@@ -29,7 +29,7 @@ btn.addEventListener("click", () => {
 
 //Llamado a la API
 
-if (location.hash.substr(0, 25) === "#state=null&access_token=") {
+if (location.hash.includes("access_token=")) {
   let params = unserialize(location.hash.substr(1));
   const apiUrl = "https://twinoid.com/graph/" + params.state;
   callApi(apiUrl, params.access_token, (obj) => {
