@@ -4,7 +4,7 @@ Twinoid API test
 
 How to use:
 
-Scope: The scope of your query (see https://twinoid.com/developers/api for reference, field cannot be empty)
+Scope: The scope of your query (see https://twinoid.com/developers/api for reference, field cannot be empty)\n
 URL: The URL of your query, without "https://twinoid.com/graph/" (see https://twinoid.com/developers/api for reference)
 
 Example: Scope=`contacts` and URL=`user/63244?fields=name,birthday` would return
