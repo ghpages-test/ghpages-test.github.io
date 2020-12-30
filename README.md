@@ -7,7 +7,7 @@ How to use:
 Scope: The scope of your query (see https://twinoid.com/developers/api for reference, field cannot be empty)
 URL: The URL of your query, without "https://twinoid.com/graph/" (see https://twinoid.com/developers/api for reference)
 
-Example: Scope=`contacts` and URL=`user/63244?fields=name,birthday` would return:
+Example: Scope=`contacts` and URL=`user/63244?fields=name,birthday` would return
 `{
   "name": "Bravz",
   "id": 63244,
