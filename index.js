@@ -23,6 +23,8 @@ function callApi(url, token, callback) {
 const btn = document.getElementById("query-btn");
 const scopeInput = document.getElementById("scope");
 const urlInput = document.getElementById("url");
+const codeDiv = document.getElementById("code-div");
+const code = document.getElementById("code");
 btn.addEventListener("click", () => {
   btn.href += scopeInput.value + "&state=" + urlInput.value;
 });
@@ -31,8 +33,10 @@ btn.addEventListener("click", () => {
 
 if (location.hash.includes("access_token=")) {
   let params = unserialize(location.hash.substr(1));
+  codeDiv.style.display = "block";
   const apiUrl = "https://twinoid.com/graph/" + params.state;
   callApi(apiUrl, params.access_token, (obj) => {
     console.log(obj);
+    code.innerText = JSON.stringify(obj);
   });
 }
