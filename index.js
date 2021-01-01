@@ -37,6 +37,6 @@ if (location.hash.includes("access_token=")) {
   const apiUrl = "https://twinoid.com/graph/" + params.state;
   callApi(apiUrl, params.access_token, (obj) => {
     console.log(obj);
-    code.innerText = JSON.stringify(obj, null, 2).slice(8);
+    code.innerText = JSON.stringify(obj, null, 2);
   });
 }
