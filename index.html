@@ -32,7 +32,18 @@
   <div class="background-alt" id="code-div">
     <div class="experience">
       <pre>
-        <code id="code"></code>
+        <code id="code">
+          Instrucciones de uso:
+          Scope: El scope (alcance) de tu llamado a la API (ver https://twinoid.com/developers/api). El campo no puede estar vacío.
+          URL: La URL del llamado sin "https://twinoid.com/graph/" (ver https://twinoid.com/developers/api).
+         
+          Ejemplo: Scope=contacts y URL=user/11?fields=name,birthday retornaría:
+          {
+          "name": "Znarf",
+          "id": 11,
+          "birthday": null
+          }
+        </code>
       </pre>
     </div>
   </div>

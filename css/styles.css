@@ -64,7 +64,7 @@ body.active {
 }
 .background-alt {
   background: #f2f2f5;
-  display: none;
+  display: block;
 }
 #lead {
   position: relative;
